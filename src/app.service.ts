@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import * as path from 'path';
 import * as fs from 'fs';
-const { createReadStream, createWriteStream } = require("fs");
 
 @Injectable()
 export class AppService {
@@ -26,7 +25,7 @@ export class AppService {
         console.log('Processing  ...  100%');
         resolve(filePath);
       });
-      
+
       stream.on('error', err => {
         console.error(err);
         reject(err);
